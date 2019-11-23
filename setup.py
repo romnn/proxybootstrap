@@ -13,7 +13,7 @@ def get_long_description() -> str:
 setup(
     name="proxybootstrap",
     packages=["proxybootstrap"],
-    version="0.1.1",
+    version="0.1.2",
     license="MIT",
     description="A simple python wrapper script for bootstrapping a reverse proxy inside a docker container.",
     long_description=m2r.parse_from_file(Path().parent / "README.md"),
