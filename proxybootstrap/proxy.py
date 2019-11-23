@@ -2,6 +2,7 @@ import argparse
 import asyncio
 import logging
 import os
+import pathlib
 import pprint
 import shutil
 import subprocess
@@ -33,6 +34,13 @@ def is_valid_dir(_parser, _dir):
     if os.path.isdir(_dir):
         return os.path.realpath(_dir)
     _parser.error(f"The directory {_dir} does not exist")
+
+
+def packaged(module, file):
+    try:
+        return pkg_resources.resource_filename(module, file)
+    except ModuleNotFoundError:
+        return pathlib.Path() / file
 
 
 class Proxy:
@@ -194,7 +202,7 @@ def main():
         "--dockerfile",
         type=lambda d: is_valid_file(parser, d),
         help="dockerfile for building the container",
-        default=pkg_resources.resource_filename("proxybootstrap", "Dockerfile.jinja2"),
+        default=packaged("proxybootstrap", "Dockerfile.jinja2"),
     )
     parser.add_argument(
         "-c",
@@ -202,9 +210,7 @@ def main():
         dest="config",
         type=lambda d: is_valid_file(parser, d),
         help="proxy server config jinja2 template file to substitute",
-        default=pkg_resources.resource_filename(
-            "proxybootstrap", "configs/default.conf"
-        ),
+        default=packaged("proxybootstrap", "configs/default.conf"),
     )
 
     # Parse known arguments and include any additional arguments to be passed to the templating engine
