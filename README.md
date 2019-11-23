@@ -1,5 +1,8 @@
 ## CORS reverse development proxy
-![](https://travis-ci.com/romnnn/proxybootstrap.svg?branch=master)
+![Build Status](https://travis-ci.com/romnnn/proxybootstrap.svg?branch=master)
+![PyPI License](https://img.shields.io/pypi/l/proxybootstrap)
+![PyPI Version](https://img.shields.io/pypi/v/proxybootstrap)
+![PyPI Python versions](https://img.shields.io/pypi/pyversions/proxybootstrap)
 
 A simple yet extensible python wrapper script for templating a proxy `nginx` configuration
 that functions as host mapped reverse proxy container. 
@@ -24,13 +27,13 @@ Start the proxy server with your configuration
 ```bash
 python start.py \
     --port 5000 \
-    /@http://127.0.0.1:8080 /api@http://127.0.0.1:4000 /buy@http://127.0.0.1:4000
+    /api@http://127.0.0.1:4000 /buy@http://127.0.0.1:4000 /@http://127.0.0.1:8080
 ```
 
 #### Customization
-| Option                | Description                                       | Default |
-| ----------------------|:--------------------------------------------------|---------|
-| `locations`           | service locations to proxy.                       | 
+| Option                | Description                                       | Default 
+| ----------------------|:--------------------------------------------------|---------
+| `locations`           | service locations to proxy.                       | None
 | `-c` / `-config`      | `nginx` config template file                      | `./config/default.conf`
 | `--port`              | listening port for the reverse proxy              | 5000
 | `--verbose`           | enable verbose output                             | `False`
@@ -51,7 +54,7 @@ python start.py \
     /@http://127.0.0.1:8080
 ```
 can be accessed in a template with
-```jinja2
+```
 {{ my_var1 }}
 {{ my_var2 }}
 ```
