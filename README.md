@@ -1,8 +1,8 @@
 ## CORS reverse development proxy
-![Build Status](https://travis-ci.com/romnnn/proxybootstrap.svg?branch=master)
-![PyPI License](https://img.shields.io/pypi/l/proxybootstrap)
-![PyPI Version](https://img.shields.io/pypi/v/proxybootstrap)
-![PyPI Python versions](https://img.shields.io/pypi/pyversions/proxybootstrap)
+[![Build Status](https://travis-ci.com/romnnn/proxybootstrap.svg?branch=master)](https://travis-ci.com/romnnn/proxybootstrap)
+[![PyPI License](https://img.shields.io/pypi/l/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
+[![PyPI Version](https://img.shields.io/pypi/v/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
+[![PyPI Python versions](https://img.shields.io/pypi/pyversions/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
 
 A simple yet extensible python wrapper script for templating a proxy `nginx` configuration
 that functions as host mapped reverse proxy container. 
@@ -16,13 +16,12 @@ from your frontend running on `localhost:8080` to your backend at
 - `localhost:5000/` will be routed to the frontend `localhost:8080`
 
 #### Installation and usage
-**Note**: You need to have `docker` installed
-
-After you cloned the repository, install dependencies with
 ```bash
 pip install proxybootstrap # using pip
 pipx install proxybootstrap # using pipx
 ```
+**Note**: You will need `docker` for running the proxy container
+
 Start the proxy server with your configuration
 ```bash
 python start.py \
