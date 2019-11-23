@@ -1,4 +1,5 @@
 ## CORS reverse development proxy
+![](https://travis-ci.com/romnnn/proxybootstrap.svg?branch=master)
 
 A simple yet extensible python wrapper script for templating a proxy `nginx` configuration
 that functions as host mapped reverse proxy container. 
@@ -22,14 +23,14 @@ pipx install proxybootstrap # using pipx
 Start the proxy server with your configuration
 ```bash
 python start.py \
-    -l /@http://127.0.0.1:8080 /api@http://127.0.0.1:4000 /buy@http://127.0.0.1:4000 \
-    --port 5000
+    --port 5000 \
+    /@http://127.0.0.1:8080 /api@http://127.0.0.1:4000 /buy@http://127.0.0.1:4000
 ```
 
 #### Customization
 | Option                | Description                                       | Default |
 | ----------------------|:--------------------------------------------------|---------|
-| `-l` / `-locations`   | service locations to proxy.                       | []
+| `locations`           | service locations to proxy.                       | 
 | `-c` / `-config`      | `nginx` config template file                      | `./config/default.conf`
 | `--port`              | listening port for the reverse proxy              | 5000
 | `--verbose`           | enable verbose output                             | `False`
@@ -44,10 +45,10 @@ them in the config template.
 Example:
 ```bash
 python start.py \
-    -l /@http://127.0.0.1:8080 \
     -my_var1 Test1 \
     --my_var2 Test2 \
-    --port 5000
+    --port 5000 \
+    /@http://127.0.0.1:8080
 ```
 can be accessed in a template with
 ```jinja2
@@ -72,7 +73,6 @@ pipx install pipenv
 
 Install all dependencies with
 ```bash
-pipenv lock --pre
 pipenv install --dev
 ```
 
