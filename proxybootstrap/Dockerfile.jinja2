@@ -1,0 +1,4 @@
+FROM nginx:latest
+ARG nginx_config
+COPY ${nginx_config} /etc/nginx/nginx.conf
+RUN ls -la /etc/nginx/
