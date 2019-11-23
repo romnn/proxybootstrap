@@ -1,13 +1,14 @@
 language: python
+os: linux
 cache:
   pip: true
   directories:
     - $HOME/.cache/pre-commit
-install:
+script:
   - pip install -e .
 deploy:
   provider: pypi
-  user: "__token__"
+  username: "__token__"
   password:
     secure: "Your encrypted token"
   on:
