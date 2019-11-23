@@ -2,9 +2,10 @@ language: python
 python:
   - 3.7
 os: linux
+install:
+  - pipenv install --dev
 script:
-- pipenv install --dev
-- pip install -e .
+  - pip install -e .
 deploy:
   provider: pypi
   username: __token__
@@ -12,4 +13,3 @@ deploy:
     secure: iycZB5HIzfDclqecjRlRPuxwdSCacNHz3o7G3olmG9tDuNRjVrGMMKfgDdv3HriHnXtbNAjkV3G5KvykQjKoAR6AqieL/SDPk3Kj4h9+26p+bDdafpYnsrF9uNvhzri7+r87GOYldYB+DtRr2e/Sg1itXJP1YHk4Crn12AiHL0JyuHrpPi1fkUcVFzaWVDR3t0BOeZ93Qqm2PH28xsLptUO9UFpJtIY1CQq7swHP8yOdymr8GXLcveGSAe5+IuHKljXliIshcWHVDEGevOPc49WyvvxZHUtfhPljz6ZCREMBGTz+rwQrYkw9NVyiBZphz3RZg4js0twT6da9fb/kZWEKQO+CtAOvyr5N5iM+pAQZ03P/+G6yNjUbpCJ0XKZyzKc77EEEJEGDoDaEii4/D1sFGgyvWeZKKDE0q7A8Xabd27uydZ04eCOArDDjuuOEn2SDuR/syTIP2YZNrYxm+7gN2OVoKMeKUl2mjdAIC3RrdgPk5w+4jv/WpPE1VLqRrRmEOMmBjexpdlHpk3rJeAvHBvqSlJQdihP/PtzHzHLsJvQJDNffSoTRjdNAYjUk5c7nPVtOd/cTb8GLVpn/Eam13y12W6Kl3wRNazQOrpIINknPdwuNqr3ih2f1LrKQhPIqezy/AXf3gxo9IEhsf4QBk8KgSB1YhtA/N/HCqyI=
   on:
     tags: true
-    branch: master
