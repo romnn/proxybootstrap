@@ -9,6 +9,7 @@ black = "*"
 isort = "*"
 flake8 = "*"
 m2r = "*"
+bump2version = "*"
 
 [packages]
 jinja2 = "*"
