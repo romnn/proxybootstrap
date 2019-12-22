@@ -2,8 +2,6 @@ language: python
 python:
   - 3.7
 os: linux
-install:
-  - pipenv install --dev
 script:
   - pip install -e .
 deploy:
