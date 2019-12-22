@@ -210,7 +210,7 @@ def main():
         dest="config",
         type=lambda d: is_valid_file(parser, d),
         help="proxy server config jinja2 template file to substitute",
-        default=packaged("proxybootstrap", "configs/default.conf"),
+        default=packaged("proxybootstrap", "nginx.default.jinja2"),
     )
 
     # Parse known arguments and include any additional arguments to be passed to the templating engine

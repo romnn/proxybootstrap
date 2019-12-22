@@ -25,7 +25,7 @@ setup(
     python_requires=">=3.6",
     install_requires=["jinja2"],
     extras_require=dict(dev=["m2r"]),
-    package_data={"proxybootstrap": ["configs", "Dockerfile.jinja2"]},
+    package_data={"proxybootstrap": ["nginx.default.jinja2", "Dockerfile.jinja2"]},
     classifiers=[
         "Environment :: Console",
         "Operating System :: OS Independent",
