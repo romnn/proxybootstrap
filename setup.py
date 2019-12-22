@@ -14,7 +14,7 @@ except ImportError:
 setup(
     name="proxybootstrap",
     packages=["proxybootstrap"],
-    version="0.1.4",
+    version="0.1.5",
     license="MIT",
     description=short_description,
     long_description=long_description,
