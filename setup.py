@@ -1,13 +1,14 @@
 from distutils.core import setup
 from pathlib import Path
 
-import m2r
+short_description = "A simple python wrapper script for bootstrapping a reverse proxy inside a docker container."
 
+try:
+    import m2r
 
-def get_long_description() -> str:
-    readme_md = Path().parent / "README.md"
-    with open(readme_md, encoding="utf-8") as ld_file:
-        return str(ld_file.read())
+    long_description = m2r.parse_from_file(Path().parent / "README.md")
+except ImportError:
+    long_description = short_description
 
 
 setup(
@@ -15,14 +16,15 @@ setup(
     packages=["proxybootstrap"],
     version="0.1.3",
     license="MIT",
-    description="A simple python wrapper script for bootstrapping a reverse proxy inside a docker container.",
-    long_description=m2r.parse_from_file(Path().parent / "README.md"),
+    description=short_description,
+    long_description=long_description,
     author="romnn",
     author_email="contact@romnn.com",
     url="https://github.com/romnnn/proxybootstrap",
     keywords=["reverse", "proxy", "container", "docker", "wrapper", "CORS", "nginx"],
     python_requires=">=3.6",
     install_requires=["jinja2"],
+    extras_require=dict(dev=["m2r"]),
     package_data={"proxybootstrap": ["configs", "Dockerfile.jinja2"]},
     classifiers=[
         "Environment :: Console",
