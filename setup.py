@@ -20,7 +20,7 @@ except (ImportError, AssertionError):
 setup(
     name="proxybootstrap",
     packages=["proxybootstrap"],
-    version="0.1.6",
+    version="0.1.7",
     license="MIT",
     description=short_description,
     long_description=long_description,
