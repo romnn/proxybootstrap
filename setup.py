@@ -4,10 +4,16 @@ from pathlib import Path
 short_description = "A simple python wrapper script for bootstrapping a reverse proxy inside a docker container."
 
 try:
-    import m2r
+    if (Path().parent / "README.rst").is_file():
+        with open(str(Path().parent / "README.rst")) as readme_file:
+            long_description = readme_file.read()
+    elif (Path().parent / "README.md").is_file():
+        import m2r
 
-    long_description = m2r.parse_from_file(Path().parent / "README.md")
-except ImportError:
+        long_description = m2r.parse_from_file(Path().parent / "README.md")
+    else:
+        raise AssertionError("No readme file")
+except (ImportError, AssertionError):
     long_description = short_description
 
 
