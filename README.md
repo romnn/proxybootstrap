@@ -18,13 +18,12 @@ from your frontend running on `localhost:8080` to your backend at
 #### Installation and usage
 ```bash
 pip install proxybootstrap # using pip
-pipx install proxybootstrap # using pipx
 ```
 **Note**: You will need `docker` for running the proxy container
 
 Start the proxy server with your configuration
 ```bash
-python start.py \
+proxybootstrap \
     --port 5000 \
     /api@http://127.0.0.1:4000 /buy@http://127.0.0.1:4000 /@http://127.0.0.1:8080
 ```
@@ -46,7 +45,7 @@ file and rendered using `jinja2`. If you wish, you can pass additional arguments
 them in the config template.
 Example:
 ```bash
-python start.py \
+proxybootstrap \
     -my_var1 Test1 \
     --my_var2 Test2 \
     --port 5000 \
