@@ -13,6 +13,3 @@ bump2version = "*"
 
 [packages]
 jinja2 = "*"
-
-[requires]
-python_version = "3.7"
