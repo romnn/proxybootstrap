@@ -1,5 +1,5 @@
 ## CORS reverse development proxy
-[![Build Status](https://travis-ci.com/romnn/proxybootstrap.svg?branch=master)](https://travis-ci.com/romnnn/proxybootstrap)
+[![Build Status](https://github.com/romnn/proxybootstrap/workflows/test/badge.svg)](https://github.com/romnn/proxybootstrap/actions)
 [![PyPI License](https://img.shields.io/pypi/l/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
 [![PyPI Version](https://img.shields.io/pypi/v/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
 [![PyPI Python versions](https://img.shields.io/pypi/pyversions/proxybootstrap)](https://pypi.org/project/proxybootstrap/)
