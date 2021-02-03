@@ -26,7 +26,7 @@ setup(
     long_description=long_description,
     author="romnn",
     author_email="contact@romnn.com",
-    url="https://github.com/romnnn/proxybootstrap",
+    url="https://github.com/romnn/proxybootstrap",
     keywords=["reverse", "proxy", "container", "docker", "wrapper", "CORS", "nginx"],
     python_requires=">=3.6",
     install_requires=["jinja2"],
